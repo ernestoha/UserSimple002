@@ -11,7 +11,7 @@ import org.junit.Test
  */
 class EntityTest {
 
-    @Test
+    /*@Test
     fun constructorUser4ParamsCheckId() {
         var user = UserEntity("ernesto@", "ernesto", "herrera", "avatar x")
         assertEquals(user.firstName, "ernesto")
@@ -19,12 +19,13 @@ class EntityTest {
         user.id = 1
         assertEquals(user.id, 1)
         //Log.i("TAG", "test01")
-    }
+    }*/
 
     @Test
     fun constructorUser5Params() {
         var user = UserEntity(1, "ernesto@", "ernesto", "herrera", "avatar x")
-        assertEquals(user.firstName, "ernesto")
+//        assertEquals(user.firstName, "ernesto")
+        assertEquals(user.first_name, "ernesto")
     }
 
 }

@@ -16,7 +16,7 @@ class ApiTest {
     @Test
     fun apiUserParams() {
         var userApi : UserApi = UserApi()
-        val data : UserModel? = userApi.get(10, 1)
+        val data : UserModel? = userApi.get(1, 6)
         if (data != null) {
             println("data page = $data.page")
 //            for (s : UserEntity in data.data) {

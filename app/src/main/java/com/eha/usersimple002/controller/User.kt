@@ -14,7 +14,7 @@ class User () {
 //    mutableListOf(
     fun getUsers() : UserModel? {
         val data = this.getUserList()
-        return null
+        return data
     }
 
     private fun getUserList() : UserModel?{
