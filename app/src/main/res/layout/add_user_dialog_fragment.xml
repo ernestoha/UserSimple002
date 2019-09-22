@@ -2,11 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="350dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#F2F5F2"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="20dp"
+    tools:context=".ui.">
 
     <EditText
         android:id="@+id/main_AddUser_first_name"
@@ -45,24 +45,24 @@
         app:layout_constraintTop_toBottomOf="@id/main_AddUser_email" />
 
     <Button
-        android:id="@+id/main_AddUserDialogFragmentCancelBtn"
+        android:id="@+id/cancelBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_user_dialog_fragment_cancel_btn_Txt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/main_AddUserDialogFragmentOkBtn"
+        app:layout_constraintRight_toLeftOf="@id/addBtn"
         app:layout_constraintTop_toBottomOf="@+id/main_AddUser_avatar" />
 
     <Button
-        android:id="@+id/main_AddUserDialogFragmentOkBtn"
+        android:id="@+id/addBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_user_dialog_fragment_ok_btn_txt"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/main_AddUserDialogFragmentCancelBtn"
+        app:layout_constraintLeft_toRightOf="@id/cancelBtn"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_AddUser_avatar"/>
+        app:layout_constraintTop_toBottomOf="@+id/main_AddUser_avatar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

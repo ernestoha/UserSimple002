@@ -4,10 +4,8 @@ package com.eha.usersimple002.ui
  * Created by eherrera on 2019-09-21.
  */
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.PopupWindow
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.eha.usersimple002.R
@@ -18,8 +16,6 @@ import com.eha.usersimple002.api.User as UserApi
 import com.eha.usersimple002.api.model.User as UserModel
 
 class MainActivity : AppCompatActivity() {
-//    class MainActivity : DaggerAppCompatActivity(),
-//        AddNoteDialogFragment.AddNoteDialogFragmentActions
 
     private lateinit var userAdapter : UserRecycler
     private var page : Int = 1
@@ -29,43 +25,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var addButton = findViewById<FloatingActionButton>(R.id.addButton)
-        /*if (addButton != null) {
-            addButton.setOnClickListener(
-                Toast.makeText(this, "text", Toast.LENGTH_LONG).show()
-            )
-        }*/
-
-        addButton.apply {
-            setOnClickListener {
-                /*val dialog =
-                    AddNoteDialogFragment.getInstance(this@MainActivity)
-                dialog.show(
-                    supportFragmentManager,
-                    ADD_NOTE_DIALOG_TAG
-                )*/
-//                Toast.makeText(this, "text", Toast.LENGTH_LONG).show()
-//                loadUi()
-
-                // this@MainActivity
-
-                val dialog =
-                AddUserDialogFragment.getInstance(this@MainActivity)
-                dialog.show(
-                    supportFragmentManager,
-                    "com.eha.usersimple002.ui.AddUserDialogFragment"
-                )
-            }
-        }
-
+        initBtn()
         initRecyclerView()
         addDataSet()
 
-        //
-        /*addButton.setOnClickListener{
-//            Toast.makeText(this, "test", Toast.LENGTH_LONG).show()
-            loadUi()
-        }*/
+    }
+
+    private fun initBtn(){
+        var addButton = findViewById<FloatingActionButton>(R.id.addButton)
+        addButton.apply {
+            setOnClickListener {
+                callAddUserActivity()
+            }
+        }
     }
 
     private fun addDataSet(){
@@ -90,34 +62,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-     private fun loadUi() {
-         val window = PopupWindow(this)
-         val view = layoutInflater.inflate(R.layout.add_user_dialog_fragment, null)
-         window.contentView = view
-         window.showAtLocation(view, 1, 1, 1)
-
-
-//         mainListAdapter = MainRecyclerAdapter(MainListClickListener { todoItem ->
-//             Toast.makeText(this, todoItem.title, Toast.LENGTH_LONG).show()
-//         })
-
-         /*main_todoRecycler.apply {
-             addItemDecoration(
-                 MainListItemDecoration(LIST_SPACING)
-             )
-             adapter = mainListAdapter
-         }
-
-         main_activityMainAddNoteFab.apply {
-             setOnClickListener {
-                 val dialog =
-                     AddNoteDialogFragment.getInstance(this@MainActivity)
-                 dialog.show(
-                     supportFragmentManager,
-                     ADD_NOTE_DIALOG_TAG
-                 )
-             }
-         }*/
+     private fun callAddUserActivity() {
+         val intent = Intent(this, AddUserActivity::class.java)
+         startActivity(intent);
      }
 
 }
