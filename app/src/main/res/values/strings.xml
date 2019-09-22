@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">User Simple 002</string>
+    <string name="add_user_dialog_fragment_todo_title_hint">Todo title&#8230;</string>
+    <string name="add_user_dialog_fragment_first_name_hint">First Name</string>
+    <string name="add_user_dialog_fragment_last_name_hint">Last Name</string>
+    <string name="add_user_dialog_fragment_email_hint">Email</string>
+    <string name="add_user_dialog_fragment_avatar_hint">Avatar URL</string>
+    <string name="add_user_dialog_fragment_ok_btn_txt">Add</string>
+    <string name="add_user_dialog_fragment_cancel_btn_Txt">Cancel</string>
 </resources>
