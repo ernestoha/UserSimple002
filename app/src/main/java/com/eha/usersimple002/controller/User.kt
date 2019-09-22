@@ -18,7 +18,7 @@ class User () {
     }
 
     private fun getUserList() : UserModel?{
-        return this.userApi.get(1,1)
+        return this.userApi.getObject(1,1)
     }
 
 }

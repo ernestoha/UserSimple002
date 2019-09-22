@@ -14,9 +14,9 @@ import org.junit.Test
 class ApiTest {
 
     @Test
-    fun apiUserParams() {
+    fun apiUserParamsOBJECT() {
         var userApi : UserApi = UserApi()
-        val data : UserModel? = userApi.get(1, 6)
+        val data : UserModel? = userApi.getObject(1, 6)
         if (data != null) {
             println("data page = $data.page")
 //            for (s : UserEntity in data.data) {
@@ -26,6 +26,13 @@ class ApiTest {
                 println(s.first_name)
             }
         }
+        assertNotNull(data)
+    }
+
+    fun apiUserParamsJSONSTRING() {
+        var userApi : UserApi = UserApi()
+        val data : String? = userApi.get(1, 6)
+        println(data)
         assertNotNull(data)
     }
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/main_activity"
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
@@ -32,6 +32,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         >
 
+        <TextView
+            android:id="@+id/txtFoot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:alpha="0.6"
+            android:textColor="#00BCD4"
+            android:textStyle="bold"
+            android:gravity="right"
+            android:visibility="visible" />
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addButton"
             android:layout_width="wrap_content"
@@ -39,6 +50,7 @@
             android:clickable="true"
             app:backgroundTint="#D7EEB9"
             app:srcCompat="@android:drawable/ic_input_add" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
